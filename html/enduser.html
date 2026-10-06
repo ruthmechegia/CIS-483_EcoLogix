@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End User Portal</title>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+
+    <header>
+        <h1>Campus End User</h1>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="operator.html">Operator</a>
+            <a href="courier.html">Courier</a>
+            <a href="enduser.html">End User</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section>
+            <h2>Track Your Package</h2>
+
+            <form>
+                <label for="tracking">Tracking Number</label>
+                <input
+                    type="text"
+                    id="tracking"
+                    name="tracking"
+                    required
+                >
+
+                <button type="submit">Track Package</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Package Status</h2>
+
+            <p><strong>Status:</strong> En Route</p>
+            <p><strong>Destination:</strong> Memorial Library</p>
+            <p><strong>Estimated Location:</strong> Campus Transit Route</p>
+        </section>
+
+        <section class="card">
+            <h2>Delivery Preference</h2>
+
+            <label for="preference">Choose a delivery location</label>
+
+            <select id="preference" name="preference">
+                <option>Front Desk</option>
+                <option>Campus Locker</option>
+                <option>Department Office</option>
+            </select>
+        </section>
+
+        <section class="card">
+            <h2>Carbon Savings</h2>
+
+            <p>
+                Using CampusEco helps reduce the number of delivery vehicles
+                traveling through campus.
+            </p>
+        </section>
+
+    </main>
+
+</body>
+</html>
+ 
