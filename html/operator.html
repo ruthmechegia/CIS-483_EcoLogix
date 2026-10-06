@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Portal</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+
+    <header>
+        <h1>Central Hub Operator</h1>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="operator.html">Operator</a>
+            <a href="courier.html">Courier</a>
+            <a href="enduser.html">End User</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section>
+            <h2>Package Check-In</h2>
+
+            <form>
+                <label for="tracking">Tracking Number</label>
+                <input
+                    type="text"
+                    id="tracking"
+                    name="tracking"
+                    pattern="[A-Za-z0-9-]{5,20}"
+                    required
+                >
+
+                <label for="weight">Package Weight (lbs)</label>
+                <input
+                    type="number"
+                    id="weight"
+                    name="weight"
+                    min="1"
+                    max="100"
+                    required
+                >
+
+                <label for="dimensions">Package Dimensions</label>
+                <input
+                    type="text"
+                    id="dimensions"
+                    name="dimensions"
+                    placeholder="Example: 12 x 10 x 8"
+                    required
+                >
+
+                <label for="destination">Destination Building</label>
+                <select id="destination" name="destination" required>
+                    <option value="">Select a building</option>
+                    <option>Wissink Hall</option>
+                    <option>Memorial Library</option>
+                    <option>Centennial Student Union</option>
+                    <option>Crawford Residence Hall</option>
+                </select>
+
+                <label for="priority">Delivery Priority</label>
+                <select id="priority" name="priority" required>
+                    <option value="">Select priority</option>
+                    <option>Normal</option>
+                    <option>Urgent</option>
+                </select>
+
+                <button type="submit">Check In Package</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Package Tracking Log</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tracking #</th>
+                        <th>Destination</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>PKG-10234</td>
+                        <td>Memorial Library</td>
+                        <td>Normal</td>
+                        <td>Checked In</td>
+                    </tr>
+
+                    <tr>
+                        <td>PKG-10456</td>
+                        <td>Wissink Hall</td>
+                        <td>Urgent</td>
+                        <td>Ready for Delivery</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>
