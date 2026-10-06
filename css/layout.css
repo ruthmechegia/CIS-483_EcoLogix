@@ -1,0 +1,38 @@
+css/layout.css: .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+ 
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+ 
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+ 
+section {
+    margin-bottom: 25px;
+}
+ 
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+ 
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+ 
+    .container {
+        width: 95%;
+    }
+}
