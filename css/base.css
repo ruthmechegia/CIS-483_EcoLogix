@@ -53,3 +53,8 @@ footer {
     padding: 20px;
     margin-top: 30px;
 }
+
+.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
