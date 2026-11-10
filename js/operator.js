@@ -1,6 +1,3 @@
-const packageForm = document.querySelector("form");
-const packageTableBody = document.querySelector("tbody");
-
 class Package {
     constructor(tracking, weight, dimensions, destination, priority) {
         this.tracking = tracking;
@@ -12,14 +9,16 @@ class Package {
     }
 }
 
+const packageForm = document.querySelector("form");
+
 packageForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const tracking = document.getElementById("tracking").value;
-    const weight = document.getElementById("weight").value;
-    const dimensions = document.getElementById("dimensions").value;
-    const destination = document.getElementById("destination").value;
-    const priority = document.getElementById("priority").value;
+    const tracking = $("#tracking").val();
+    const weight = $("#weight").val();
+    const dimensions = $("#dimensions").val();
+    const destination = $("#destination").val();
+    const priority = $("#priority").val();
 
     const newPackage = new Package(
         tracking,
@@ -32,17 +31,25 @@ packageForm.addEventListener("submit", function (event) {
     addPackageToTable(newPackage);
 
     packageForm.reset();
+
+    $("#message").remove();
+
+    $("form").after(
+        '<p id="message">Package added successfully.</p>'
+    );
+
+    $("#message").hide().fadeIn();
 });
 
 function addPackageToTable(packageItem) {
-    const row = document.createElement("tr");
-
-    row.innerHTML = `
-        <td>${packageItem.tracking}</td>
-        <td>${packageItem.destination}</td>
-        <td>${packageItem.priority}</td>
-        <td>${packageItem.status}</td>
+    const newRow = `
+        <tr>
+            <td>${packageItem.tracking}</td>
+            <td>${packageItem.destination}</td>
+            <td>${packageItem.priority}</td>
+            <td>${packageItem.status}</td>
+        </tr>
     `;
 
-    packageTableBody.appendChild(row);
+    $("tbody").append(newRow);
 }
