@@ -29,6 +29,7 @@ packageForm.addEventListener("submit", function (event) {
     );
 
     addPackageToTable(newPackage);
+    addPackage(newPackage);
 
     packageForm.reset();
 
@@ -53,3 +54,6 @@ function addPackageToTable(packageItem) {
 
     $("tbody").append(newRow);
 }
+window.addEventListener("load", function () {
+    getPackages();
+});
