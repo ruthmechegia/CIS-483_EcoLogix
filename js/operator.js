@@ -56,4 +56,4 @@ function addPackageToTable(packageItem) {
 }
 window.addEventListener("load", function () {
     getPackages();
-});
+})
