@@ -1,5 +1,5 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="campusEcoApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,17 +23,18 @@
         </nav>
     </header>
 
-    <main class="container">
+    <main class="container" ng-controller="TrackingController">
 
         <section>
             <h2>Track Your Package</h2>
 
-            <form>
+            <form ng-submit="trackPackage()">
                 <label for="tracking">Tracking Number</label>
                 <input
                     type="text"
                     id="tracking"
                     name="tracking"
+                    ng-model="trackingNumber"
                     required
                 >
 
@@ -44,7 +45,7 @@
         <section class="card">
             <h2>Package Status</h2>
 
-            <p><strong>Status:</strong> En Route</p>
+            <p><strong>Status:</strong> {{ status }}</p>
             <p><strong>Destination:</strong> Memorial Library</p>
             <p><strong>Estimated Location:</strong> Campus Transit Route</p>
         </section>
@@ -72,10 +73,11 @@
 
     </main>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="../js/app.js"></script>
-<script src="../js/enduser.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/enduser.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="../js/angular-app.js"></script>
 
 </body>
 </html>
- 
